@@ -1,10 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="followChecker">
   <head>
     <meta charset="utf-8">
     <title>Facebook_Checker</title>
+    <link rel="stylesheet" type="text/css" href="styles/styleSheet.css" />
   </head>
   <body>
-    <h1>Hello World</h1>
+
+    <div ng-view></div>
+
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/underscore/underscore-min.js"></script>
+    <script src="service/service.js"></script>
+    <script src="query/query.js"></script>
+    <script src="user/user.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>

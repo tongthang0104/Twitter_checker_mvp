@@ -1,0 +1,24 @@
+<div id="container">
+  <h1>This is Query Page</h1>
+  <form name="queryForm" ng-submit="getData()">
+    <button type="submit">See your followings</button>
+  </form>
+
+  <button type="submit" ng-click="clear()">Clear</button>
+  <button type="submit" ng-click="test()">Test</button>
+  <div class="follow" ng-model="userID">
+    <h2>Followings: {{userID}}</h2>
+  </div>
+
+
+
+
+  <div class="follow" ng-model="followings">
+    <h2>Followings: {{followings}}</h2>
+  </div>
+
+  <div class="follow" ng-model="followers">
+    <h2>Followers: {{followers}}</h2>
+  </div>
+
+</div>

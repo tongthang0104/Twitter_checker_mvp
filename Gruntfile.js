@@ -20,7 +20,9 @@ module.exports = function(grunt) {
 
     nodemon: {
       dev: {
-        script: 'server.js'
+        files: {
+          src: 'server.js'
+        }
       }
     },
 
@@ -110,6 +112,10 @@ module.exports = function(grunt) {
   // grunt.registerTask('test', [
   //   'mochaTest'
   // ]);
+
+  grunt.registerTask('nodes', [
+    'nodemon'
+  ]);
 
   grunt.registerTask('build', [
     'jshint',
