@@ -1,16 +1,15 @@
 angular.module('followChecker.follow', [])
 
   .controller('FollowController' , function($scope, twitterService) {
-    $scope.followings = "This is following";
     $scope.getData = function() {
-      twitterService.getData().then(function(response) {
-        console.log(response);
+      var params = {screen_name: $scope.screenName};
+      twitterService.getData(params).then(function(response) {
+        // console.log()
+        $scope.followers = response.data.users.length;
       });
     };
 
     $scope.clear = function() {
       $scope.userID = "Clear";
     };
-
-
   });

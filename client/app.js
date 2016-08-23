@@ -18,14 +18,4 @@ angular.module("followChecker", [
     });
 
     $routeProvider.otherwise('query/query.html');
-    // $httpProvider.interceptors.push('AttachedToken');
-
 });
-
-// .factory('AttachedToken', function($window) {
-//
-// })
-
-
-
-// .run()

@@ -2,3 +2,7 @@ h1 {
   font-style: italic;
   margin-bottom: 10px;
 }
+button {
+  border: 1px;
+  color: red;
+}
