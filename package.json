@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "twitter follow API",
   "main": "server.js",
+  "scripts": {
+    "start": "npm start"
+  },
   "author": "Thang",
   "license": "ISC",
   "dependencies": {
