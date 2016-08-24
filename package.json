@@ -4,7 +4,8 @@
   "description": "twitter follow API",
   "main": "server.js",
   "scripts": {
-    "start": "npm start"
+    "start": "npm start",
+    "postinstall": "bower install"
   },
   "author": "Thang",
   "license": "ISC",
