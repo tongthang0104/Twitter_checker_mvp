@@ -9,6 +9,8 @@ var client = new Twitter({
 });
 
 exports.getFollow = function(path, params, callback) {
+
+
       client.get(path, params, function(error, data, response) {
             if (error) {
                   console.log("ERROR", error);

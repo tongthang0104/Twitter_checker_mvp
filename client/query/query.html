@@ -5,12 +5,12 @@
   </div>
 
   <form name="queryForm" ng-submit="getData()">
-    <input value="screenName" ng-model="screenName" placeholder="Enter a screen name to search"/>
-    <button type="submit">See your followings</button>
+    <input value="screenName" ng-model="screenName" placeholder="Enter a screen name to search" required/>
+    <button type="submit" ng-disabled="queryForm.screenName.$error.required">See your friends</button>
   </form>
 
   <div class="follow" ng-model="followers">
-    <h2>You have {{followers}} followers</h2>
+    <h2>You have {{followers}} friends</h2>
   </div>
 
   <!-- <div class="follow" ng-model="followers">
