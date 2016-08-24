@@ -1,5 +1,5 @@
 var Twitter = require('twitter');
-// var config = require('./env/config.js');
+
 
 var client = new Twitter({
       consumer_key: process.env.TWITTER_CONSUMER_KEY ,
