@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "npm start",
-    "postinstall": "bower install"
+    "postinstall": "./node_modules/bower/bin/bower install"
   },
   "author": "Thang",
   "license": "ISC",
@@ -29,6 +29,6 @@
     "passport": "^0.3.2",
     "passport-twitter": "^1.0.4",
     "twitter": "^1.4.0",
-    "json": "bower.json"
+    "bower": "1.7.9",
   }
 }
