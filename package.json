@@ -4,7 +4,7 @@
   "description": "twitter follow API",
   "main": "server.js",
   "scripts": {
-    "start": "npm start"
+    "start": "npm run"
   },
   "author": "Thang",
   "license": "ISC",
