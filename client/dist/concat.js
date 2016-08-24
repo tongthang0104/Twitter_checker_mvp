@@ -1,18 +1,19 @@
-angular.module("followChecker", [
-  'followChecker.follow',
-  'followChecker.service',
-  'ngRoute'
-])
+angular.module('followChecker.service', [])
+  .factory('twitterService', function($http) {
+    var getData = function(params) {
+      return $http({
+        method: 'GET',
+        url: '/api/query',
+        params: params
+      }).then(function(response) {
+        return response;
+      });
+    };
 
-.config(function($routeProvider, $httpProvider) {
-  $routeProvider
-    .when('/query', {
-      templateUrl: 'query/query.html',
-      controller: 'FollowController'
-    });
-
-    $routeProvider.otherwise('query/query.html');
-});
+    return {
+      getData: getData
+    };
+  });
 
 angular.module('followChecker.follow', [])
 
@@ -48,19 +49,18 @@ angular.module('followChecker.follow', [])
     };
   });
 
-angular.module('followChecker.service', [])
-  .factory('twitterService', function($http) {
-    var getData = function(params) {
-      return $http({
-        method: 'GET',
-        url: '/api/query',
-        params: params
-      }).then(function(response) {
-        return response;
-      });
-    };
+angular.module("followChecker", [
+  'followChecker.follow',
+  'followChecker.service',
+  'ngRoute'
+])
 
-    return {
-      getData: getData
-    };
-  });
+.config(function($routeProvider, $httpProvider) {
+  $routeProvider
+    .when('/query', {
+      templateUrl: 'query/query.html',
+      controller: 'FollowController'
+    });
+
+    $routeProvider.otherwise('query/query.html');
+});

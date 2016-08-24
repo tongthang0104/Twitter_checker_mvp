@@ -1,6 +1,7 @@
 angular.module("followChecker", [
-  'followChecker.follow',
   'followChecker.service',
+  'followChecker.follow',
+
   'ngRoute'
 ])
 

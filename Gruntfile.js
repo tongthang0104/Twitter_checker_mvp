@@ -4,8 +4,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     concat: {
       dist: {
-        src: ['client/query/**/*.js', 'client/service/**/*.js'],
-        dest: 'dist/concat.js'
+        src: ['client/service/**/*.js', 'client/query/query.js', 'client/query/app.js'],
+        dest: 'client/dist/concat.js'
       }
     },
 
@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     uglify: {
       target: {
         files: {
-          'client/dist/uglify.js': 'dist/concat.js',
+          'client/dist/uglify.js': 'client/dist/concat.js',
         }
       }
     },
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
     cssmin: {
       files: {
         src: 'client/styles/*.css',
-        dest: 'dist/style.css'
+        dest: 'client/dist/style.css'
       }
     },
 
