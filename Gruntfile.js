@@ -2,12 +2,12 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    // concat: {
-    //   dist: {
-    //     src: ['public/client/**/*.js'],
-    //     dest: 'public/dist/concat.js'
-    //   }
-    // },
+    concat: {
+      dist: {
+        src: ['client/query/**/*.js', 'client/service/**/*.js'],
+        dest: 'dist/concat.js'
+      }
+    },
 
     // mochaTest: {
     //   test: {
@@ -29,47 +29,46 @@ module.exports = function(grunt) {
     uglify: {
       target: {
         files: {
-          // 'public/dist/uglify.js': 'public/dist/concat.js',
+          'client/dist/uglify.js': 'dist/concat.js',
         }
       }
     },
 
     jshint: {
       files: [
-        // 'public/client/**/*.js',
-        // 'public/lib/**/*.js',
+        'client/query/**/*.js',
+        'client/service/**/*.js'
       ],
       options: {
         force: 'false',
         jshintrc: '.jshintrc',
         ignores: [
-          // 'public/lib/**/*.js',
-          // 'public/dist/**/*.js'
+          'client/bower_components/**/*.js',
+          'node_modules/**/*.js'
         ]
       }
     },
 
     cssmin: {
       files: {
-        // src: 'public/*.css',
-        // dest: 'public/dist/style.css'
+        src: 'client/styles/*.css',
+        dest: 'dist/style.css'
       }
     },
 
     watch: {
       scripts: {
         files: [
-          // 'public/client/**/*.js',
-          // 'public/lib/**/*.js',
+          'client/query/**/*.js', 'client/service/**/*.js'
         ],
         tasks: [
-          // 'jshint',
-          // 'concat',
-          // 'uglify'
+          'jshint',
+          'concat',
+          'uglify'
         ]
       },
       css: {
-        files: 'public/*.css',
+        files: 'client/styles/*.css',
         tasks: ['cssmin']
       }
     },

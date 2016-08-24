@@ -1,3 +1,19 @@
+angular.module("followChecker", [
+  'followChecker.follow',
+  'followChecker.service',
+  'ngRoute'
+])
+
+.config(function($routeProvider, $httpProvider) {
+  $routeProvider
+    .when('/query', {
+      templateUrl: 'query/query.html',
+      controller: 'FollowController'
+    });
+
+    $routeProvider.otherwise('query/query.html');
+});
+
 angular.module('followChecker.follow', [])
 
   .controller('FollowController' , function($scope, twitterService) {
@@ -29,5 +45,22 @@ angular.module('followChecker.follow', [])
         $scope.followers = result;
         $scope.filter = countUser;
       });
+    };
+  });
+
+angular.module('followChecker.service', [])
+  .factory('twitterService', function($http) {
+    var getData = function(params) {
+      return $http({
+        method: 'GET',
+        url: '/api/query',
+        params: params
+      }).then(function(response) {
+        return response;
+      });
+    };
+
+    return {
+      getData: getData
     };
   });

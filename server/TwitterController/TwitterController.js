@@ -15,7 +15,7 @@ module.exports = {
       console.log('is checking');
       var promise = new Promise(function(resolve, reject) {
           Twitter.getFollow('friends/list', params, function(data) {
-            result.push(data);
+            result.push(data.users);
             resolve(data.next_cursor);
           });
       }).then(function(next_cursor) {
