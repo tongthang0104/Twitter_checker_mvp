@@ -7,8 +7,10 @@ var express = require('express'),
     app = express();
 
 require('./server/middleware.js')(app, express);
-console.log('App is listening on port 8000');
-app.listen(8000);
+console.log('Server now listening on port ' + port);
+
+var port = process.env.PORT || 8000;
+app.listen(port);
 
 // app.use(session({
 //   secret: 'keyboard cat',
